@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KELAS 6C - LUXURY EDITION</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #d4af37;
+      --gold-light: #f3e5ab;
+      --dark: #0f1015;
+      --card-bg: rgba(20, 21, 28, 0.75);
+      --border: rgba(212, 175, 55, 0.3);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
+
+    body {
+      background: linear-gradient(rgba(10, 11, 15, 0.85), rgba(10, 11, 15, 0.92)), url('IMG-20251031-WA0004.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #f3f4f6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: rgba(15, 16, 21, 0.85);
+      backdrop-filter: blur(15px);
+      padding: 1.8rem 1rem;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: var(--gold);
+      letter-spacing: 3px;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+    }
+
+    .subtitle {
+      font-size: 0.8rem;
+      letter-spacing: 4px;
+      color: #9ca3af;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    nav { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+
+    nav button {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: #d1d5db;
+      padding: 8px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+    }
+
+    nav button:hover, nav button.active {
+      background: var(--gold);
+      color: var(--dark);
+      border-color: var(--gold);
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+    }
+
+    main { flex: 1; padding: 35px 20px; max-width: 1000px; margin: auto; width: 100%; }
+
+    .tab-content { display: none; animation: fadeIn 0.4s ease; }
+    .tab-content.active { display: block; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .luxury-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(15px);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 25px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 1.8rem;
+      color: var(--gold);
+      letter-spacing: 1px;
+    }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
+
+    .day-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 18px;
+      text-align: center;
+    }
+    .day-card h3 { color: var(--gold); margin-bottom: 10px; font-size: 1.1rem; font-family: 'Playfair Display', serif; }
+    .day-card p { font-size: 0.9rem; color: #d1d5db; line-height: 1.6; }
+
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
+    .gallery-card {
+      background: rgba(255, 255, 255, 0.02);
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      text-align: center;
+      padding-bottom: 10px;
+    }
+    .gallery-img { width: 100%; height: 140px; object-fit: cover; display: block; }
+    .gallery-caption { font-size: 0.85rem; margin-top: 10px; font-weight: 600; color: var(--gold-light); }
+
+    ul.members-list { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; }
+    ul.members-list li {
+      background: rgba(255, 255, 255, 0.02);
+      padding: 10px 14px;
+      border-radius: 6px;
+      border: 1px solid rgba(212, 175, 55, 0.15);
+      font-size: 0.9rem;
+    }
+
+    .cewek { color: #f472b6; font-weight: 600; }
+    .cowok { color: #e5e7eb; font-weight: 500; }
+
+    .tree-node { text-align: center; padding: 8px; }
+    .tree-title { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gold); font-weight: 700; margin-bottom: 4px; }
+    .tree-name { font-size: 1.1rem; font-weight: 600; font-family: 'Playfair Display', serif; }
+
+    footer { text-align: center; padding: 20px; background: rgba(15, 16, 21, 0.9); font-size: 0.8rem; color: #6b7280; border-top: 1px solid var(--border); letter-spacing: 1px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Kelas 6C</h1>
+    <div class="subtitle">Luxury Edition & Information</div>
+    <nav>
+      <button class="nav-btn active" onclick="openTab('pelajaran')">Pelajaran</button>
+      <button class="nav-btn" onclick="openTab('galeri')">Galeri</button>
+      <button class="nav-btn" onclick="openTab('anggota')">Absen Anggota</button>
+      <button class="nav-btn" onclick="openTab('struktur')">Struktur Kelas</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- PELAJARAN -->
+    <div id="pelajaran" class="tab-content active">
+      <h2 class="section-title">Jadwal Pelajaran</h2>
+      <div class="grid">
+        <div class="day-card"><h3>Senin</h3><p>PJOK, IPAS, PP (Upacara)</p></div>
+        <div class="day-card"><h3>Selasa</h3><p>B. Inggris, B. Indonesia, Math</p></div>
+        <div class="day-card"><h3>Rabu</h3><p>Math, PP, Agama</p></div>
+        <div class="day-card"><h3>Kamis</h3><p>IPAS, B. Indonesia, B. Jawa</p></div>
+        <div class="day-card"><h3>Jumat</h3><p>SBDP, SBDP</p></div>
+      </div>
+    </div>
+
+    <!-- GALERI -->
+    <div id="galeri" class="tab-content">
+      <h2 class="section-title">Galeri Kenangan</h2>
+      <div class="gallery-grid">
+        <div class="gallery-card">
+          <img src="kelas1.jpg" alt="Foto Bersama" class="gallery-img">
+          <div class="gallery-caption">Foto Bersama</div>
+        </div>
+        <div class="gallery-card">
+          <img src="kelas2.jpg" alt="Foto Bersama" class="gallery-img">
+          <div class="gallery-caption">Foto Bersama</div>
+        </div>
+        <div class="gallery-card">
+          <img src="kelas3.jpg" alt="Foto Bersama" class="gallery-img">
+          <div class="gallery-caption">Foto Bersama</div>
+        </div>
+        <div class="gallery-card">
+          <img src="kelas4.jpg" alt="Foto Bersama" class="gallery-img">
+          <div class="gallery-caption">Foto Bersama</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ANGGOTA -->
+    <div id="anggota" class="tab-content">
+      <h2 class="section-title">Absen Anggota Kelas 6C</h2>
+      <div class="luxury-card">
+        <ul class="members-list">
+          <li class="cowok">1. Zayan</li>
+          <li class="cowok">2. Beril</li>
+          <li class="cewek">3. Almira</li>
+          <li class="cowok">4. Varo</li>
+          <li class="cewek">5. Anin</li>
+          <li class="cowok">6. Axelle</li>
+          <li class="cewek">7. Fira</li>
+          <li class="cowok">8. Daffa</li>
+          <li class="cowok">9. Putra</li>
+          <li class="cewek">10. Dafita</li>
+          <li class="cewek">11. Azza</li>
+          <li class="cewek">12. Gita</li>
+          <li class="cewek">13. Keicho</li>
+          <li class="cewek">14. Keisha</li>
+          <li class="cowok">15. Kenzi</li>
+          <li class="cewek">16. Kirani</li>
+          <li class="cewek">17. Levi</li>
+          <li class="cewek">18. Mahirah</li>
+          <li class="cowok">19. Ali</li>
+          <li class="cowok">20. Agam</li>
+          <li class="cowok">21. Altara</li>
+          <li class="cowok">22. Mirza</li>
+          <li class="cowok">23. Ubed</li>
+          <li class="cowok">24. Zidan</li>
+          <li class="cewek">25. Nailul</li>
+          <li class="cowok">26. Randika</li>
+          <li class="cewek">27. Safiyah</li>
+          <li class="cowok">28. Sean</li>
+          <li class="cewek">29. Zaskia</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- STRUKTUR -->
+    <div id="struktur" class="tab-content">
+      <h2 class="section-title">Struktur Organisasi Kelas</h2>
+      <div class="luxury-card" style="display: flex; flex-direction: column; gap: 20px;">
+        <div class="tree-node"><div class="tree-title">Wali Kelas</div><div class="tree-name cewek">RR. Yuliati</div></div>
+        <hr style="border-color: var(--border);">
+        <div class="grid">
+          <div class="tree-node"><div class="tree-title">Ketua Kelas</div><div class="tree-name cowok">Axelle Maulana</div></div>
+          <div class="tree-node"><div class="tree-title">Wakil Ketua</div><div class="tree-name cewek">Azkana Azmi</div></div>
+          <div class="tree-node"><div class="tree-title">Sekretaris</div><div class="tree-name cewek">Gita Putri</div></div>
+        </div>
+        <hr style="border-color: var(--border);">
+        <div class="grid">
+          <div class="tree-node"><div class="tree-title">Keamanan</div><div class="tree-name cowok">Zidan Putra</div></div>
+          <div class="tree-node"><div class="tree-title">Bendahara</div><div class="tree-name cewek">Anindya Citra</div></div>
+          <div class="tree-node"><div class="tree-title">Ketertiban</div><div class="tree-name cowok">Afriza Zayan</div></div>
+          <div class="tree-node"><div class="tree-title">Kebersihan</div><div class="tree-name"><span class="cewek">Azza</span> & <span class="cewek">Kirani</span></div></div>
+          <div class="tree-node"><div class="tree-title">Keindahan</div><div class="tree-name"><span class="cewek">Dhafitha</span> & <span class="cewek">Keicho</span></div></div>
+          <div class="tree-node"><div class="tree-title">Kekeluargaan</div><div class="tree-name cewek">Leviana Syabila</div></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2026 KELAS 6C. ALL RIGHTS RESERVED.
+  </footer>
+
+  <script>
+    function openTab(tabName) {
+      const tabs = document.querySelectorAll('.tab-content');
+      const buttons = document.querySelectorAll('.nav-btn');
+      tabs.forEach(tab => tab.classList.remove('active'));
+      buttons.forEach(btn => btn.classList.remove('active'));
+      document.getElementById(tabName).classList.add('active');
+      event.currentTarget.classList.add('active');
+    }
+  </script>
+</body>
+</html>
